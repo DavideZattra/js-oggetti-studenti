@@ -8,7 +8,7 @@
  * 
  */
 
-const studentOne = { //Creare un oggetto che descriva uno studente, con le seguenti proprietà: nome, cognome e età.
+let studentOne = { //Creare un oggetto che descriva uno studente, con le seguenti proprietà: nome, cognome e età.
     name : 'Davide',
     surname : 'Zattra',
     age : 27
@@ -20,32 +20,42 @@ for(let properties in studentOne){ // Stampare a schermo attraverso un ciclo for
 
 }
 
-const studentsList = { //Creare un array di oggetti di studenti.
+let studentsList = [ //Creare un array di oggetti di studenti.
 
-    student : [
-        {
-            name : 'Davide',
-            surname : 'Zattra',
-            age : 27
-        },
+    {
+        name : 'Davide',
+        surname : 'Zattra',
+        age : 27
+    },
 
-        {
-            name : 'Eugenio',
-            surname : 'Tacconi',
-            age : 75
-        },
+    {
+        name : 'Eugenio',
+        surname : 'Tacconi',
+        age : 75
+    },
 
-        {
-            name : 'Mario',
-            surname : 'Rossi',
-            age: 25
-        }
-    ]
+    {
+        name : 'Mario',
+        surname : 'Rossi',
+        age: 25
+    }
+
+]
+
+for (let i in studentsList) { //Ciclare su tutti gli studenti e stampare per ognuno di essi, nome e cognome.
+
+    console.log(studentsList[i].name)
+    console.log(studentsList[i].surname)
+    
 }
 
-for (let i in studentsList.student) { //Ciclare su tutti gli studenti e stampare per ognuno di essi, nome e cognome.
 
-    console.log(studentsList.student[i].name)
-    console.log(studentsList.student[i].surname)
+studentsList.push({ //Dare la possibilità all’utente, attraverso 3 prompt(), di aggiungere un nuovo oggetto studente inserendo nell’ordine: nome, cognome e età.
+    
+    name : prompt('nome'),
+    surname : prompt('cognome'),
+    age : parseInt(prompt('età'))
 
-}
+})
+
+console.log(studentsList)
